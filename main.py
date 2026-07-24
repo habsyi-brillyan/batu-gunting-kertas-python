@@ -1,21 +1,34 @@
 import random
 
-def main():
-    print("=" * 40)
-    print(" 🎮 GAME BATU, GUNTING, KERTAS 🎮 ")
-    print("=" * 40)
+print("=" * 50)
+print(" 🎮 GAME BATU, GUNTING, KERTAS 🎮 ")
+print("=" * 50)
 
-    # daftar pilihan yang tersedia
-    pilihan = ["gunting", "batu", "kertas"]
+ # daftar pilihan yang tersedia
+pilihan = ["gunting", "batu", "kertas"]
 
-    # input dari pemain
+# input dari pemain
+while True:
     pemain = input("Masukkan pilihan Anda (gunting, batu, kertas): ").lower().strip()
-
-    # jika pemain tidak memilih salah satu dari pilihan yang tersedia
     if pemain not in pilihan:
         print("Pilihan tidak valid. Silahkan pilih gunting, batu, atau kertas!")
-        return
+    else:
+        break
     
-    # pilihan komputer secara acak
-    komputer = random.choice(pilihan)
-    
+# pilihan komputer secara acak
+komputer = random.choice(pilihan)
+
+# pilihan pemain dan komputer
+print(f"\nPilihan Anda: {pemain}")
+print(f"Pilihan Komputer: {komputer}")
+
+# menentukan pemenang
+if pemain == komputer:
+    hasil = "Hasil SERIII!"
+elif(pemain == "gunting" and komputer == "kertas") or \
+        (pemain == "batu" and komputer == "gunting") or \
+        (pemain == "kertas" and komputer == "batu"): 
+    hasil = "Kamu MENANG!"
+else:
+    hasil = "Kamu KALAH!"
+print(f"\nHasil: {hasil}")
