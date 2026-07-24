@@ -11,7 +11,7 @@ pilihan = ["gunting", "batu", "kertas"]
 while True:
     pemain = input("Masukkan pilihan Anda (gunting, batu, kertas): ").lower().strip()
     if pemain not in pilihan:
-        print("Pilihan tidak valid. Silahkan pilih gunting, batu, atau kertas!")
+        print("\nPilihan tidak valid. Silahkan pilih gunting, batu, atau kertas!\n")
     else:
         break
     
